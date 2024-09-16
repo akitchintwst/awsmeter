@@ -2,13 +2,11 @@ plugins {
     id 'java'
 }
 
+sourceCompatibility = JavaVersion.VERSION_22  // Adjust this to match your Java version
+targetCompatibility = JavaVersion.VERSION_22
+
 group 'org.apache.jmeter.protocol.aws'
 version '3.0.1'
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility= JavaVersion.VERSION_17
-}
 
 repositories {
     mavenCentral()
@@ -25,7 +23,7 @@ class ApacheJMeterRule implements ComponentMetadataRule{
 }
 
 dependencies {
-    components{
+    components {
         withModule("org.apache.jmeter:ApacheJMeter_java", ApacheJMeterRule)
         withModule("org.apache.jmeter:ApacheJMeter_core", ApacheJMeterRule)
     }
@@ -38,6 +36,7 @@ dependencies {
     implementation 'software.amazon.awssdk:cognitoidentityprovider'
     implementation 'com.amazonaws:aws-java-sdk-sns'
     implementation 'com.amazonaws:aws-java-sdk-sts'
+    implementation 'com.amazonaws:aws-java-sdk-lambda'  // Added for Lambda support
     implementation 'com.fasterxml.jackson.core:jackson-core'
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
