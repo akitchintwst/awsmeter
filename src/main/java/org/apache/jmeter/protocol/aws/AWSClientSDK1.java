@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
+
 /**
  * Interface segregation with implementation of AWS SDK1.
  * @author JoseLuisSR

@@ -37,6 +37,9 @@ dependencies {
     implementation 'com.amazonaws:aws-java-sdk-sns'
     implementation 'com.amazonaws:aws-java-sdk-sts'
     implementation 'com.amazonaws:aws-java-sdk-lambda'  // Added for Lambda support
+    // Add the AWS SDK v2 SSO module
+    implementation 'software.amazon.awssdk:sso:2.21.43'
+    implementation 'software.amazon.awssdk:ssooidc:2.21.43'
     implementation 'com.fasterxml.jackson.core:jackson-core'
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
